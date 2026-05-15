@@ -1,0 +1,79 @@
+# Hermès — Cursor AI Rules
+
+## Language & Framework
+- Language: TypeScript (strict mode)
+- Framework: React 18 (functional components only)
+- Build Tool: Vite 5
+
+## Code Style
+- Use ESM imports/exports (no CommonJS)
+- Prefer `const` over `let`, avoid `var`
+- Use arrow functions for callbacks
+- Use template literals for strings
+- Use optional chaining (`?.`) and nullish coalescing (`??`)
+
+## TypeScript Rules
+- Enable strict mode (already configured)
+- Prefer type inference over explicit types
+- Use interfaces for object shapes
+- Use type aliases for unions/intersections
+- Avoid `any` — use `unknown` if needed
+
+## React Patterns
+- Use functional components with hooks
+- Prefer `useState` and `useEffect` over class lifecycle
+- Extract complex logic into custom hooks
+- Keep components under 200 lines
+- One component per file
+
+## File Organization
+- Components: `src/components/ComponentName.tsx`
+- Hooks: `src/hooks/useHookName.ts`
+- Utils: `src/utils/utilName.ts`
+- Types: `src/types/typeName.ts`
+- Styles: Co-locate with components (`ComponentName.css`)
+
+## Naming Conventions
+- Components: PascalCase (`Button.tsx`)
+- Hooks: camelCase with `use` prefix (`useCounter.ts`)
+- Utils: camelCase (`formatDate.ts`)
+- Constants: UPPER_SNAKE_CASE (`API_URL`)
+- CSS classes: kebab-case (`button-primary`)
+
+## Import Order
+1. React imports
+2. Third-party imports
+3. Local imports (components, hooks, utils)
+4. Type imports
+5. CSS imports
+
+## CSS Guidelines
+- Use CSS modules for component styles
+- Keep global styles minimal
+- Use CSS variables for theming
+- Prefer flexbox/grid over floats
+- Mobile-first responsive design
+
+## Performance
+- Lazy load routes and heavy components
+- Memoize expensive computations with `useMemo`
+- Memoize callbacks with `useCallback`
+- Use `React.memo` for pure components
+- Avoid inline object/array creation in JSX
+
+## Testing (when added)
+- Test user interactions, not implementation
+- Use React Testing Library
+- Prefer integration tests over unit tests
+- Mock external dependencies
+
+## Git Commit Messages
+- Use conventional commits format
+- Examples: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`
+
+## Don't Do
+- Don't add routing unless requested
+- Don't add state management unless requested
+- Don't add UI libraries unless requested
+- Don't use class components
+- Don't use CommonJS (`require`/`module.exports`)
